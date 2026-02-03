@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send Message</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-card {
+      background: #ffffff;
+      padding: 24px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-card h2 {
+      margin-bottom: 16px;
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #4f46e5;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4338ca;
+    }
+  </style>
+</head>
+
+<body>
+  <form
+    class="form-card"
+    action="https://flawed.app.n8n.cloud/webhook-test/form-submission"
+    method="POST"
+  >
+    <h2>Send Message</h2>
+
+    <div class="form-group">
+      <label for="gmail_account">Gmail Address</label>
+      <input
+        id="gmail_account"
+        name="gmail_account"
+        type="email"
+        placeholder="yourname@gmail.com"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        id="title"
+        name="title"
+        type="text"
+        placeholder="Email subject"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="content">Message</label>
+      <textarea
+        id="content"
+        name="content"
+        placeholder="Write your message here..."
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>
